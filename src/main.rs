@@ -1,11 +1,7 @@
-use Rcloc::cli::args::parse_args;
-use Rcloc::cli::command::Command;
+use Rcloc::FileInfo;
 
 fn main() {
-    let args = parse_args();
-
-    let cmd = Command::from(args);
-    // let command = Command::from(commit, root);
-    println!("commit id {:?}", cmd.commit);
-    println!("file path{:?}", cmd.root);
+    let file_info = FileInfo::new("../src");
+    println!("File name: {:?}", file_info.file_path);
+    println!("File size: {:?}", file_info.files);
 }
